@@ -1,25 +1,27 @@
-import React from 'react'
 import {
     createBrowserRouter,
     createRoutesFromElements,
-    Route
-  } from "react-router-dom";
+    Route,
+    useParams
+} from "react-router-dom";
 
-import Home from "@/pages/Home";
-import AccountLinks from "./pages/AccountLinks";
-import Dashboard from "@/pages/Admin/Dashboard";
-import CreateLink from './pages/Admin/CreateLink';
+import Home from '@/pages/Home';
+import AccountLinks from '@/pages/AccountLinks';
+import Dashboard from '@/pages/Admin/Dashboard';
+import AdminMenu from "@/components/Admin/AdminMenu";
+import CreateLink from "@/pages/Admin/CreateLink";
+import Ui from "@/pages/Admin/Ui";
 
-
-  export default createBrowserRouter(
+export default createBrowserRouter(
     createRoutesFromElements(
         <>
-            <Route path='/' element={ <Home/>}></Route>
-            <Route path='/:accountlinks' element={ <AccountLinks/>}></Route>
-            <Route path='/admin'>
-              <Route path='dashboard' element={<Dashboard/>}></Route>
-              <Route path='create-link' element={<CreateLink />}></Route>
+            <Route path="/" element={ <Home /> }></Route>
+            <Route path="/:accountlink" element={ <AccountLinks /> }></Route>
+            <Route path="/admin">
+                <Route path="dashboard" element={ <Dashboard /> }></Route>
+                <Route path="create-link" element={ <CreateLink /> }></Route>
+                <Route path="ui" element={ <Ui /> }></Route>
             </Route>
         </>
     )
-  )
+)

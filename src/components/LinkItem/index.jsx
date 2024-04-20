@@ -1,7 +1,8 @@
 
 import './LinkItem.css';
+import storage from "@/storage"
 
-export default function LinkItem({ title, description, label }) {
+export default function LinkItem({ title, description, label, link }) {
     return (
         <div className="link-wrap">
             
@@ -12,7 +13,7 @@ export default function LinkItem({ title, description, label }) {
                 </>
             )}
 
-            <a href="#" className="link-item ">{ label }</a>
+            <a href={link} className="link-item" style={storage.getUiStyle()}>{ label }</a>
         </div>
     );
 }

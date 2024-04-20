@@ -1,10 +1,11 @@
 
 import Admin from "@/pages/Admin";
+import UiForm from "@/components/UiForm";
 
 export default function Dashboard() {
     return ( 
         <Admin>
-            <h1>Dashboard</h1>
+            <UiForm />
         </Admin>
     );
 } 
